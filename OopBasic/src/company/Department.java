@@ -18,7 +18,7 @@ public class Department {
     }
     
     //nameのgetter
-    public String getname() {
+    public String getName() {
         return name;
     }
     

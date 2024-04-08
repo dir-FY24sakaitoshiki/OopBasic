@@ -1,9 +1,9 @@
 package company;
 
-public class Employee {
+public abstract class Employee implements Workable{
     //フィールド
     protected final String name;
-    private final Department department ;
+    protected final Department department ;
     //型とクラスがイコールということだと思う。つまり、Stringは1つのクラスである。
     private final String position;
     private final int employeeId;
@@ -28,9 +28,13 @@ public class Employee {
     //.report()というメソッドは引数を指定することなく、１回目の報告メソッドを呼び出すことができる。このように、オーバーレイとはよく入力される引数を省略し、利便性を高めるためのメソッドの用い方である。
     
     //会議に参加するメソッド
-    public void joinMeeting() {
-        department.meeting();
-        System.out.println("→上記の会議に参加します。部署:" +department.getname()+"名前:" + name);
+    public abstract void joinMeeting() ;
+        
+    
+    //働くメソッドを実装
+    @Override
+    public void work() {
+        System.out.println("正社員として働きます。名前:" + name + slogan);
     }
     }
 
